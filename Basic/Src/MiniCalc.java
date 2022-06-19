@@ -1,12 +1,6 @@
 package Basic.Src;
 public class MiniCalc {
-    public MiniCalc (){
-        int c = add(1,2);
-        int d = multiply(3 ,4);
-        int e = substract(6, 7);
-        double f = division(10, 7);
-        System.out.println(c + " " + d + " " + e + " " + f);
-    }
+
     public int add (int a, int b){
         return a + b;
     }
@@ -22,5 +16,10 @@ public class MiniCalc {
     public static void main (String[] args){
         System.out.println("MiniCalc");
         MiniCalc mc = new MiniCalc();
+        int c = mc.add(1,2);
+        int d = mc.multiply(3 ,4);
+        int e = mc.substract(6, 7);
+        double f = mc.division(10, 7);
+        System.out.println(c + " " + d + " " + e + " " + f);
     }
 }
