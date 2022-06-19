@@ -1,6 +1,3 @@
-package Basic.Src;
-
-
 public class Game {
     public void play() {
         System.out.println("Good Game");

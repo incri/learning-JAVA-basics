@@ -1,5 +1,3 @@
-package Basic.Src;
-
 import java.util.Arrays;
 
 public class Store {

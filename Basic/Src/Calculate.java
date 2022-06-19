@@ -1,5 +1,3 @@
-package Basic.Src;
-
 public class Calculate {
     public void calculate(int a, int b){
         System.out.println("add is " + (a + b));

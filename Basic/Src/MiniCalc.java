@@ -1,4 +1,3 @@
-package Basic.Src;
 public class MiniCalc {
 
     public int add (int a, int b){
