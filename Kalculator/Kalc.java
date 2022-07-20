@@ -7,8 +7,8 @@ public class Kalc implements ActionListener{
     JFrame jframe;
     JTextField textfield;
     JButton[] button = new JButton[10];
-    JButton[] fButtons = new JButton[8];
-    JButton addButton, subButton, multButton, divButton;
+    JButton[] fButtons = new JButton[10];
+    JButton addButton, subButton, multButton, divButton, perButton;
     JButton decButton, equlButton, delButton, clsButton;
     JPanel panel;
 
@@ -43,6 +43,9 @@ public class Kalc implements ActionListener{
         equlButton = new JButton("=");
         delButton = new JButton("Del");
         clsButton = new JButton("Cls");
+        perButton = new JButton("%");
+        
+
 
         fButtons[0] = addButton;
         fButtons[1] = subButton;
@@ -52,21 +55,45 @@ public class Kalc implements ActionListener{
         fButtons[5] = equlButton;
         fButtons[6] = delButton;
         fButtons[7] = clsButton;
+        fButtons[8] = perButton;
+        
 
-        for (int i = 0; i < 8; i++){
+        for (int i = 0; i < 9; i++){
             fButtons[i].addActionListener(this);
             fButtons[i].setFont(myFont);
             fButtons[i].setFocusable(false);
         }
-        for (int i = 0; i < 10; i++){
+        
+        for (int i = 1; i < 10; i++){
             button[i] = new JButton(String.valueOf(i));
             button[i].addActionListener(this);
             button[i].setFont(myFont);
             button[i].setFocusable(false);
-        }
-        delButton.setBounds(365, 150, 90, 40);
-        clsButton.setBounds(45, 430, 90, 40);
 
+        }
+
+        //setting the button boundary size and shape
+        //first row
+        clsButton.setBounds(40, 150, 90, 40);
+        perButton.setBounds(150, 150, 90, 40);
+        delButton.setBounds(260, 150, 90, 40);
+        
+
+
+        //del coloum
+        divButton.setBounds(370, 150, 90, 40);
+        multButton.setBounds(370, 210, 90, 40);
+        subButton.setBounds(370, 280, 90, 40);
+        addButton.setBounds(370, 350, 90, 40);
+        equlButton.setBounds(370, 420, 90, 40);
+
+        //last coloum
+        decButton.setBounds(260, 420, 90, 40); 
+
+        //number from 1 to 9
+        
+
+        
 
         frame.setVisible(true);// setting the visibility
 
@@ -74,8 +101,15 @@ public class Kalc implements ActionListener{
         frame.add(textfield);
         frame.add(delButton);
         frame.add(clsButton);
+        frame.add(perButton);
+        
+        frame.add(divButton);
+        frame.add(multButton);
+        frame.add(subButton);
+        frame.add(addButton);
+        frame.add(equlButton);
 
-
+        frame.add(decButton);
 
     }
 
