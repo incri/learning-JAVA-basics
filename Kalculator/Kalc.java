@@ -9,8 +9,11 @@ public class Kalc implements ActionListener{
     JButton[] button = new JButton[10];
     JButton[] fButtons = new JButton[10];
     JButton addButton, subButton, multButton, divButton, perButton;
-    JButton decButton, equlButton, delButton, clsButton;
+    JButton decButton, equlButton, delButton, clsButton, zeroButton;
     JPanel panel;
+    JPanel panel2;
+    JPanel panel3;
+    JPanel panel4;
 
     Font myFont = new Font ("Serif", Font.BOLD, 30);
 
@@ -44,6 +47,7 @@ public class Kalc implements ActionListener{
         delButton = new JButton("Del");
         clsButton = new JButton("Cls");
         perButton = new JButton("%");
+        zeroButton = new JButton("0");
         
 
 
@@ -56,9 +60,11 @@ public class Kalc implements ActionListener{
         fButtons[6] = delButton;
         fButtons[7] = clsButton;
         fButtons[8] = perButton;
+        fButtons[9] = zeroButton;
+
         
 
-        for (int i = 0; i < 9; i++){
+        for (int i = 0; i < 10; i++){
             fButtons[i].addActionListener(this);
             fButtons[i].setFont(myFont);
             fButtons[i].setFocusable(false);
@@ -71,29 +77,62 @@ public class Kalc implements ActionListener{
             button[i].setFocusable(false);
 
         }
+        //setting up the numbers panel 1 to 9
+
+        panel = new JPanel();
+        panel.setBounds(40, 210, 310, 180);
+        panel.setBackground(Color.lightGray);
+
+        panel.setLayout(new GridLayout(3, 3, 18, 18));
+
+        panel.add(button[7]);
+        panel.add(button[8]);
+        panel.add(button[9]);
+
+        panel.add(button[4]);
+        panel.add(button[5]);
+        panel.add(button[6]);
+
+        panel.add(button[1]);
+        panel.add(button[2]);
+        panel.add(button[3]);
+
 
         //setting the button boundary size and shape
         //first row
-        clsButton.setBounds(40, 150, 90, 40);
-        perButton.setBounds(150, 150, 90, 40);
-        delButton.setBounds(260, 150, 90, 40);
+        panel2 = new JPanel();
+        panel2.setBounds(40, 150, 410, 40);
+        panel2.setBackground(Color.lightGray);
+
+        panel2.add(clsButton).setBounds(40, 150, 90, 40);
+        panel2.add(perButton).setBounds(150, 150, 90, 40);
+        panel2.add(delButton).setBounds(260, 150, 90, 40);
+        panel2.add(divButton).setBounds(370, 150, 90, 40);
         
 
 
         //del coloum
-        divButton.setBounds(370, 150, 90, 40);
-        multButton.setBounds(370, 210, 90, 40);
-        subButton.setBounds(370, 280, 90, 40);
-        addButton.setBounds(370, 350, 90, 40);
-        equlButton.setBounds(370, 420, 90, 40);
+
+        panel3 = new JPanel();
+        panel3.setBounds(370, 150, 90, 280);
+        panel3.setBackground(Color.lightGray);
+        
+        panel3.add(multButton).setBounds(370, 210, 90, 40);
+        panel3.add(subButton).setBounds(370, 280, 90, 40);
+        panel3.add(addButton).setBounds(370, 350, 90, 40);
+        
 
         //last coloum
-        decButton.setBounds(260, 420, 90, 40); 
 
-        //number from 1 to 9
-        
+        panel4 = new JPanel();
+        panel4.setBounds(40, 420, 420, 40);
+        panel4.setBackground(Color.lightGray);
 
-        
+        panel4.add(equlButton).setBounds(260, 420, 200, 40);
+        panel4.add(decButton).setBounds(40, 420, 90, 40);
+        panel4.add(zeroButton).setBounds(150, 420, 90, 40);
+
+
 
         frame.setVisible(true);// setting the visibility
 
@@ -109,7 +148,14 @@ public class Kalc implements ActionListener{
         frame.add(addButton);
         frame.add(equlButton);
 
+        frame.add(zeroButton);
+
         frame.add(decButton);
+
+        frame.add(panel);
+        frame.add(panel2);
+        frame.add(panel3);
+        frame.add(panel4);
 
     }
 
